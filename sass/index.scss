@@ -1,0 +1,126 @@
+//index.sass
+//body
+//padding 1em
+
+//index.scss
+//body{
+//padding 1em;
+//}
+
+// ära kasuta index.sass kasuta index.scss
+//tekib vähem vigu ja harjumuspärane.
+
+@import "partial";
+
+$primary-color: #ff0000;
+$primary-font: arial, "cursive";
+
+body {
+  background: $primary-color;
+  font-family: $primary-font;
+}
+// --watch igal salvestamisel uuendab style.css ise
+
+// .container nav ul > li:nth-child(1) {
+//   font-size: 1em;
+// }
+// .container nav ul > li:nth-child(2) {
+//   font-size: 1em;
+// }
+//kasuta hoopis nestimist
+
+.container {
+  width: 100%;
+  height: 100%;
+  nav {
+    ul {
+      li &:nth-child(1) {
+        font-size: 1em;
+      }
+      &:nth-child(2) {
+        font-size: 2em;
+      }
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+//partials on hea kui tahad mitmes scc kasutada korduvaid staile
+
+//_partial.scss
+// @import 'partial'
+
+//mixins
+
+// Mixinit kasuta et olla kompakstem, mixin on nagu css klass css sees
+
+@mixin transform_Me($prop1, $prop2) {
+  width: $prop1;
+  height: $prop2;
+  background-color: yellow;
+  -ms-transform: rotate(20deg) scale(1.5); //IE 9
+  -webkit-transform: rotate(20deg) scale(1.5); //Safari
+  transform: rotate(20deg) scale(1.5);
+}
+.transform {
+  @include transform_Me(400px, 500px);
+  font-size: 3em;
+}
+.transform2 {
+  @include transform_Me(200px, 300px);
+}
+
+//extend
+
+//kasuta siis kui klassid on sarnased ja ainult moni stiili elelemt erineb
+%extend-border {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+  font-size: 1em;
+}
+
+%extend-new {
+  margin: 20px;
+  color: #eee;
+}
+.border {
+  @extend %extend-border;
+}
+
+.border1 {
+  @extend %extend-border;
+  margin: 20px;
+}
+
+//pseudo selector
+//pseudo klassidel on teissugune kirjapilt naide nestis ja siin all
+.element {
+  a {
+    text-decoration: none;
+    color: black;
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+//operators
+.header {
+  font-size: 4px + 2; //liidab style.css kokku
+
+  height: 80% -5%;
+}
+
+.multi {
+  width: 20% * 5;
+  height: (24px / 4); //tahab sulge!!
+}
+p {
+  &::before {
+    content: "I am a string with" + quote;
+    font-family: cursive + "serif";
+  }
+}
