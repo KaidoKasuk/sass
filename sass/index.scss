@@ -3,16 +3,16 @@
 //padding 1em
 
 //index.scss
-//body{
-//padding 1em;
-//}
+// body{
+// padding 1em;
+// }
 
 // ära kasuta index.sass kasuta index.scss
 //tekib vähem vigu ja harjumuspärane.
 
 @import "partial";
 
-$primary-color: #ff0000;
+$primary-color: #ffffff;
 $primary-font: arial, "cursive";
 
 body {
@@ -68,13 +68,13 @@ body {
   @include transform_Me(400px, 500px);
   font-size: 3em;
 }
-.transform2 {
+.transform {
   @include transform_Me(200px, 300px);
 }
 
 //extend
 
-//kasuta siis kui klassid on sarnased ja ainult moni stiili elelemt erineb
+//kasuta siis kui klassid on sarnased ja ainult mone stiili elelemt erineb
 %extend-border {
   border: 1px solid #ccc;
   padding: 10px;
