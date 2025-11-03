@@ -12,7 +12,7 @@
 
 @import "partial";
 
-$primary-color: #ffffff;
+$primary-color: #ffa5a5;
 $primary-font: arial, "cursive";
 
 body {
@@ -62,13 +62,13 @@ body {
   background-color: yellow;
   -ms-transform: rotate(20deg) scale(1.5); //IE 9
   -webkit-transform: rotate(20deg) scale(1.5); //Safari
-  transform: rotate(20deg) scale(1.5);
+  transform: rotate(20deg) scale(1);
 }
 .transform {
   @include transform_Me(400px, 500px);
   font-size: 3em;
 }
-.transform {
+.transform-2 {
   @include transform_Me(200px, 300px);
 }
 
@@ -109,7 +109,7 @@ body {
 
 //operators
 .header {
-  font-size: 4px + 2; //liidab style.css kokku
+  font-size: 4px + 2px; //liidab style.css kokku
 
   height: 80% -5%;
 }
