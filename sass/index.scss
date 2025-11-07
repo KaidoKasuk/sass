@@ -12,9 +12,8 @@
 
 @import "partial";
 
-$primary-color: #ffa5a5;
-$primary-font: arial, "cursive";
-
+$primary-color: tomato;
+$primary-font: "sans-serif", cursive;
 body {
   background: $primary-color;
   font-family: $primary-font;
@@ -34,11 +33,13 @@ body {
   height: 100%;
   nav {
     ul {
-      li &:nth-child(1) {
-        font-size: 1em;
-      }
-      &:nth-child(2) {
-        font-size: 2em;
+      li {
+        &:nth-child(1) {
+          font-size: 1em;
+        }
+        &:nth-child(2) {
+          font-size: 2em;
+        }
       }
     }
     a {
@@ -74,7 +75,7 @@ body {
 
 //extend
 
-//kasuta siis kui klassid on sarnased ja ainult mone stiili elelemt erineb
+//kasuta siis kui klassid on sarnased ja ainult mÕne stiili elelemt erineb
 %extend-border {
   border: 1px solid #ccc;
   padding: 10px;
@@ -111,7 +112,7 @@ body {
 .header {
   font-size: 4px + 2px; //liidab style.css kokku
 
-  height: 80% -5%;
+  height: 80% - 5%;
 }
 
 .multi {
@@ -119,7 +120,7 @@ body {
   height: (24px / 4); //tahab sulge!!
 }
 p {
-  &::before {
+  &:before {
     content: "I am a string with" + quote;
     font-family: cursive + "serif";
   }

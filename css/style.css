@@ -7,18 +7,18 @@ li {
 }
 
 body {
-  background: #ffa5a5;
-  font-family: arial, "cursive";
+  background: tomato;
+  font-family: "sans-serif", cursive;
 }
 
 .container {
   width: 100%;
   height: 100%;
 }
-li .container nav ul:nth-child(1) {
+.container nav ul li:nth-child(1) {
   font-size: 1em;
 }
-.container nav ul:nth-child(2) {
+.container nav ul li:nth-child(2) {
   font-size: 2em;
 }
 .container nav a {
@@ -65,7 +65,7 @@ li .container nav ul:nth-child(1) {
 
 .header {
   font-size: 6px;
-  height: 80% -5%;
+  height: 75%;
 }
 
 .multi {
@@ -73,7 +73,7 @@ li .container nav ul:nth-child(1) {
   height: 6px;
 }
 
-p::before {
+p:before {
   content: "I am a string withquote";
   font-family: cursiveserif;
 }
